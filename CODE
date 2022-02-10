@@ -1,0 +1,107 @@
+input.onSwitchMoved(SwitchDirection.Left, function () {
+    pins.A5.digitalWrite(true)
+    pins.A2.digitalWrite(true)
+    pins.A3.digitalWrite(true)
+    pins.A4.digitalWrite(true)
+    music.setVolume(132)
+    music.playMelody("C D E F G A B C5 ", 120)
+    light.clear()
+    light.showRing(
+    `white black black black black black black black black white`
+    )
+    light.showRing(
+    `blue white black black black black black black white blue`
+    )
+    light.showRing(
+    `blue blue white black black black black white blue blue`
+    )
+    light.showRing(
+    `blue blue blue white black black white blue blue blue`
+    )
+    light.showRing(
+    `blue blue blue blue white white blue blue blue blue`
+    )
+    light.showRing(
+    `blue blue blue blue blue blue blue blue blue blue`
+    )
+    music.stopAllSounds()
+})
+pins.A3.onEvent(PinEvent.Fall, function () {
+	
+})
+pins.A4.onEvent(PinEvent.Fall, function () {
+	
+})
+light.clear()
+music.setVolume(0)
+forever(function () {
+    if (input.pinA5.isPressed()) {
+        music.setVolume(132)
+        music.pewPew.loop()
+        light.showRing(
+        `red red red red red red red red red red`
+        )
+        light.showRing(
+        `red red orange red red red red orange red red`
+        )
+        light.showRing(
+        `red orange yellow orange red red orange yellow orange red`
+        )
+        light.showRing(
+        `orange yellow red yellow orange orange yellow red yellow orange`
+        )
+        light.showRing(
+        `yellow red red red yellow yellow red red red yellow`
+        )
+        light.showRing(
+        `red red red red red red red red red red`
+        )
+        music.stopAllSounds()
+        light.showRing(
+        `blue blue blue blue blue blue blue blue blue blue`
+        )
+    } else if (input.pinA4.isPressed()) {
+        music.setVolume(132)
+        music.pewPew.loop()
+        light.showRing(
+        `white blue white blue white blue blue white blue white`
+        )
+        light.showRing(
+        `blue white blue blue white blue white blue white blue`
+        )
+        light.showRing(
+        `blue white blue blue white blue white blue white blue`
+        )
+        light.showRing(
+        `blue white blue blue white white blue white blue white`
+        )
+        light.showRing(
+        `blue white blue white white blue white blue white blue`
+        )
+        light.showRing(
+        `white blue blue white blue white white blue white blue`
+        )
+        music.stopAllSounds()
+        light.showRing(
+        `blue blue blue blue blue blue blue blue blue blue`
+        )
+    } else if (input.pinA3.isPressed()) {
+        music.setVolume(132)
+        music.playMelody("F G E B F A E C5 ", 150)
+        light.showRing(
+        `red pink red blue pink purple blue green yellow white`
+        )
+        light.showRing(
+        `pink purple yellow blue green yellow orange blue red blue`
+        )
+        light.showRing(
+        `red white pink purple orange blue green yellow red blue`
+        )
+        music.stopAllSounds()
+        light.showRing(
+        `blue blue blue blue blue blue blue blue blue blue`
+        )
+    } else {
+    	
+    }
+})
